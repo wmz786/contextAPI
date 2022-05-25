@@ -23,11 +23,20 @@ const ThemeContextProvider = (props) => {
       background: "#5c5c5c",
     },
   });
-  return (
-    <ThemeContext.Provider value={values}>
-      {props.children}
-    </ThemeContext.Provider>
-  );
+   
+  const changeValue = () => {
+    setValues({ ...values, isDarkTheme: !values.isDarkTheme });
+  };
+    return (
+      <ThemeContext.Provider
+        value={{
+          values: values,
+          changeValue,
+        }}
+      >
+        {props.children}
+      </ThemeContext.Provider>
+    );
 };
 
 export default ThemeContextProvider;
