@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import TodoList from "./components/TodoList";
 import ThemeContextProvider from "./contexts/ThemeContext";
@@ -9,6 +10,7 @@ function App() {
         <ThemeContextProvider>
           <Navbar />
           <TodoList />
+          <Footer />
         </ThemeContextProvider>
       </div>
     </div>
