@@ -20,6 +20,7 @@ const TodoList = () => {
             <p className="item">Go for shoping for dinner</p>
             <p className="item">Go for a walk</p>
             <p className="item">recitation of quran karim</p>
+            <p className="item">Doing prayer</p>
           </div>
         );
       }}
