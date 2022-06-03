@@ -2,7 +2,7 @@ import { createContext, useState } from "react";
 
 export const AuthContext = createContext();
 
-const AuthContextProvider = (props) => {
+const AuthContextProvider = ({ children }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const changeAuthValue = () => {
@@ -10,8 +10,8 @@ const AuthContextProvider = (props) => {
   };
 
   return (
-    <AuthContext.Provider value={{ ...isLoggedIn, changeAuthValue }}>
-      {props.children}
+    <AuthContext.Provider value={{ isLoggedIn, changeAuthValue }}>
+      {children}
     </AuthContext.Provider>
   );
 };

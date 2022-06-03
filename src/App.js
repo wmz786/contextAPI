@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar";
 import TodoList from "./components/TodoList";
 import ThemeContextProvider from "./contexts/ThemeContext";
 import AuthContextProvider from "./contexts/AuthContext";
+import TodoListContextProvider from "./contexts/TodoListContext";
 
 function App() {
   return (
@@ -10,9 +11,11 @@ function App() {
       <div className="ui raised very padded text container segment">
         <AuthContextProvider>
           <ThemeContextProvider>
-            <Navbar />
-            <TodoList />
-            <Footer />
+            <TodoListContextProvider>
+              <Navbar />
+              <TodoList />
+              <Footer />
+            </TodoListContextProvider>
           </ThemeContextProvider>
         </AuthContextProvider>
       </div>
