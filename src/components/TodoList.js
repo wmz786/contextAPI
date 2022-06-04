@@ -4,18 +4,18 @@ import { TodoListContext } from "../contexts/TodoListContext";
 
 // accessing global state with context useing  .Consumer which works in both functional and classs based components
 const TodoList = () => {
-  const { todos, addTodo, removeTodo } = useContext(TodoListContext);
+  const { todos, dispatch } = useContext(TodoListContext);
   const [todo, setTodo] = useState("");
   const handleChange = (e) => {
     setTodo(e.target.value);
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    addTodo(todo);
+    dispatch({ type: "ADD_TODO", text: todo });
   };
   const handleRemoveTodo = (e) => {
     const id = e.target.id;
-    removeTodo(id);
+    dispatch({ type: "REMOVE_TODO", id });
   };
   return (
     <ThemeContext.Consumer>
